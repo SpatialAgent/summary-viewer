@@ -1,11 +1,11 @@
-summary-viewer
-==============
+summary-viewer-template
+=======================
 
 Summary Viewer is a configurable application template that summarizes the numeric attributes of features in operational layer that are within the visible map area.
 
-![Screen Shot](http://coolmaps.esri.com/templates/SummaryViewer/images/thumb.png)
+![Screen Shot](https://dl.dropboxusercontent.com/u/24627279/screenshots/summary-viewer-thumb.png)
 
-[View it live] (http://coolmaps.esri.com/templates/SummaryViewer)
+[View it live] (http://devext.arcgis.com/apps/SummaryViewer/index.html?webmap=d77d3a0fc6e0445ba1d31a2de25fd517)
 
 #Features
 A configurable application template that summarizes the numeric attributes of features in a specific operational layer that are within the visible map area. The summaries can be configured to show the sum, average, minimum or maximum values.
