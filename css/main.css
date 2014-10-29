@@ -197,8 +197,13 @@ html, body {
    -webkit-appearance: none;
 }
 
+select::-ms-value {
+	background: none;
+}
+
 option:checked {
-	color: #ffffff;
+	color: #efefef;
+	background: transparent;
 	height: 30px;
 	line-height: 30px;
 	font-family: Arial;
