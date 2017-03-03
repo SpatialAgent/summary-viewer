@@ -70,8 +70,8 @@ define([
       timer : null,
       defExpr: null,
 
-      // constructor
-      constructor : function(config) {
+      // startup
+      startup : function(config) {
          //config will contain application and user defined info for the template such as i18n strings, the web map id
          // and application id
          // any url parameters and any application specific configuration information.
@@ -85,6 +85,26 @@ define([
                me.resizeWindow();
             };
          }));
+      },
+
+      reportError: function (error) {
+        // remove loading class from body
+        domClass.remove(document.body, "app-loading");
+        domClass.add(document.body, "app-error");
+        // an error occurred - notify the user. In this example we pull the string from the
+        // resource.js file located in the nls folder because we've set the application up
+        // for localization. If you don't need to support multiple languages you can hardcode the
+        // strings here and comment out the call in index.html to get the localization strings.
+        // set message
+        var node = dom.byId("loading_message");
+        if (node) {
+          if (this.config && this.config.i18n) {
+            node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+          } else {
+            node.innerHTML = "Unable to create map: " + error.message;
+          }
+        }
+        return error;
       },
 
       // initialize UI
@@ -188,17 +208,19 @@ define([
             //resource.js file located in the nls folder because we've set the application up
             //for localization. If you don't need to support mulitple languages you can hardcode the
             //strings here and comment out the call in index.html to get the localization strings.
-            if (this.config && this.config.i18n) {
-               alert(this.config.i18n.map.error + ": " + error.message);
-            } else {
-               alert("Unable to create map: " + error.message);
-            }
+            // if (this.config && this.config.i18n) {
+            //    alert(this.config.i18n.map.error + ": " + error.message);
+            // } else {
+            //    alert("Unable to create map: " + error.message);
+            // }
+            this.reportError(error);
          }));
       },
 
       // map loaded
       mapLoaded : function() {
          // Map is ready
+         domClass.remove(document.body, "app-loading");
          query(".esriSimpleSlider").style("backgroundColor", this.config.color);
          var basemapGallery = new BasemapGallery({
             showArcGISBasemaps : true,
