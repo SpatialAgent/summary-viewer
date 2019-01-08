@@ -1,7 +1,11 @@
 define({
    root: ({
       "map": {
-         "error": "Unable to create map"
+         "error": "Unable to create map",
+         "licenseError": {
+            "message": "Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license.",
+            "title": "Not Licensed"
+         }
       },
       "tooltips": {
          "logo": "Logo",
@@ -11,6 +15,7 @@ define({
    }),
    "ar": 1,
    "bs": 1,
+   "ca": 1,
    "cs": 1,
    "da": 1,
    "de": 1,
@@ -21,6 +26,7 @@ define({
    "he": 1,
    "hi": 1,
    "hr": 1,
+   "hu": 1,
    "id": 1,
    "it": 1,
    "ja": 1,
@@ -34,6 +40,7 @@ define({
    "pt-pt": 1,
    "ro": 1,
    "ru": 1,
+   "sl": 1,
    "sr": 1,
    "sv": 1,
    "tr": 1,
