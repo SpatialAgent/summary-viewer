@@ -7,7 +7,7 @@ define({
     }
   },
   "tooltips": {
-    "logo": "Logotips",
+    "logo": "Logo",
     "switchbasemap": "Pārslēgt pamatkarti",
     "close": "Aizvērt"
   }
